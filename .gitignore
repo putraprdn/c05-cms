@@ -1,3 +1,4 @@
 node_modules
 .env
 temp
+views/partials/index-back.ejs

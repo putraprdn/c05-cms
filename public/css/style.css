@@ -26,7 +26,7 @@
 
 body {
 	font-family: "IBMPlexSans-Bold";
-	background-color: #e5e5e5;
+	background-color: #f4f5f7;
 }
 
 .main-menu {
@@ -53,26 +53,27 @@ body {
 .sidebar {
 	width: 220px;
 	height: 100vh;
-	z-index: -1;
 }
 
 .fixed-sidebar {
 	padding-top: 80px;
 	background: #fff;
 }
-.sidebar p {
+.sidebar p,
+.sidebar a {
 	font-family: "IBMPlexSans-Regular";
 	font-size: 14px;
 	line-height: 20px;
 	color: #8a8a8a;
 }
-.sidebar p:last-child {
+.sidebar p:last-child,
+.sidebar a:last-child {
 	color: #151515;
 	background-color: var(--bg-grey);
 }
 
 .navbar {
-	width: 100vw;
+	width: 92%;
 	z-index: 100;
 }
 .navbar .nav-logo {
@@ -163,6 +164,37 @@ body {
 	font-family: "IBMPlexSans-Light";
 }
 
+.form-card {
+	background-color: #fff;
+}
+.form-card .form-label {
+	color: #3c3c3c;
+}
+.form-card .form-label,
+.form-card .form-control::placeholder,
+.form-card select,
+.form-card .form-text,
+.form-card .form-control {
+	font-family: "IBMPlexSans-Light";
+	color: #8a8a8a;
+	font-size: 12px;
+	line-height: 18px;
+}
+.form-card .form-label span {
+	color: #ff0000;
+}
+.form-card .form-control,
+.form-card select {
+	color: #151515 !important;
+	width: 339px;
+}
+form .btn-wrap a {
+	width: 69px;
+	height: 36px;
+}
+form > .row {
+	margin-top: 100px;
+}
 .btn-success {
 	background-color: var(--bg-success);
 }

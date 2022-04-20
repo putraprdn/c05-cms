@@ -16,93 +16,50 @@
 
 <body>
     <main>
-        <!-- Side Menu -->
         <div class="row mx-0">
-            <div class="col-md-1 px-0 position-relative">
-                <div class="fixed-menu h-100 position-fixed py-3 px-0">
-                    <div class="logo m-auto"></div>
-                    <div class="menu-wrap mt-3">
-                        <div class="menu d-flex flex-column align-items-center p-2 justify-content-center">
-                            <img src="./images/group_2.png" alt="Home">
-                            <p class="fs-12 text-white mb-0">Dashboard</p>
-                        </div>
-                        <div class="menu d-flex flex-column align-items-center p-2 justify-content-center">
-                            <img src="./images/fi_truck.png" alt="Truck">
-                            <p class="fs-12 text-white mb-0 fw-bold">Cars</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Side Menu -->
-
-            <div class="rigth-wrap col-md-11 px-0">
-                <!-- Navbar -->
-                <nav class="navbar navbar-expand-lg py-3 bg-light position-fixed">
-                    <div class="container-fluid">
-                        <div class="nav-logo"></div>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <img class="fi-menu" src="./images/fi_menu.png" alt="menu">
-                            <form class="d-flex ms-auto">
-                                <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-primary" type="submit">Search</button>
-                            </form>
-                            <div class="user-wrap d-flex align-items-center ms-4 gap-3">
-                                <div class="user-icon px-3 py-2 rounded-circle">P</div>
-                                <p class="mb-0 fw-normal">Putra Perdana</p>
-                                <img src="./images/Vector_down.png" alt="vector down">
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-                <!-- End Navbar -->
-
-
-                <div class="row">
-                    <!-- Sidebar -->
-                    <div class="col-md-2">
-                        <div class="sidebar position-fixed">
-                            <div class="fixed-sidebar h-100">
-                                <a class="text-capitalize fw-bold mb-0 py-3 ps-4 d-block text-decoration-none">cars</a>
-                                <a class="fw-bold mb-0 py-3 ps-4 d-block text-decoration-none" href="/">List Car</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Sidebar -->
-
-                    <!-- Main Body -->
-                    <div class="col-md-10">
-                        <div class="main">
-                            <div class="breadcrumb d-flex align-items-center gap-2">
-                                <span class="fs-12">
-                                    Cars
-                                </span>
-                                <img src="./images/Vector_right.png" alt="">
-                                <% if (url=="home" || url == "/" ) { %>
-                                    <span class="active fs-12">List Car</span>
-                                    <% var isTitle=true %>
-                                        <% } else { %>
-                                            <span class="fs-12"><a href="/" class="text-decoration-none text-black">List
-                                                    Car</a> </span>
-                                            <img src="./images/Vector_right.png" alt="">
-                                            <span class="active fs-12">
-                                                <%= title %>
+            <!-- Side Menu -->
+            <%- include('menu') %>
+                <!-- End Side Menu -->
+                <div class="rigth-wrap col-md-11 px-0">
+                    <!-- Navbar -->
+                    <%- include('navbar') %>
+                        <!-- End Navbar -->
+                        <div class="row">
+                            <%- include('sidebar') %>
+                                <!-- Main Body -->
+                                <div class="col-md-10">
+                                    <div class="main">
+                                        <div class="breadcrumb d-flex align-items-center gap-2">
+                                            <span class="fs-12">
+                                                Cars
                                             </span>
+                                            <img src="./images/Vector_right.png" alt="">
+                                            <% if (url=="home" || url=="/" ) { %>
+                                                <span class="active fs-12">List Car</span>
+                                                <% var isTitle=true %>
+                                                    <% } else { %>
+                                                        <span class="fs-12"><a href="/"
+                                                                class="text-decoration-none text-black">List
+                                                                Car</a> </span>
+                                                        <img src="./images/Vector_right.png" alt="">
+                                                        <span class="active fs-12">
+                                                            <%= title %>
+                                                        </span>
+                                                        <% } %>
+                                        </div>
+                                        <% if (!isTitle) { %>
+                                            <h1 class="main-title fs-20 mt-3 mb-0 fw-bold">
+                                                <%= title %>
+                                            </h1>
                                             <% } %>
-                            </div>
-                            <% if (!isTitle) { %>
-                                <h1 class="main-title fs-20 mt-3 mb-0 fw-bold">
-                                    <%= title %>
-                                </h1>
-                                <% } %>
 
-                                    <!-- Main Content -->
-                                    <%- body %>
-
+                                                <!-- Main Content -->
+                                                <%- body %>
+                                    </div>
+                                </div>
+                                <!-- End Main Body -->
                         </div>
-                    </div>
-                    <!-- End Main Body -->
                 </div>
-            </div>
         </div>
     </main>
 

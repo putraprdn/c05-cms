@@ -18,8 +18,7 @@ app.use(cors());
 app.use(express.static("public"));
 
 app.use("/", router);
-// app.use("/api", router);
 
 app.listen(port, () => {
-	console.log(`Server is running at port ${port}`);
+	console.log(`Server is running at http://localhost:${port}`);
 });

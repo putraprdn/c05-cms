@@ -12,6 +12,7 @@
     "sequelize-cli": "^6.4.1"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",

@@ -195,6 +195,23 @@ form .btn-wrap a {
 form > .row {
 	margin-top: 100px;
 }
+
+
+
+.modal-dialog {
+	max-width: 387px;
+}
+.modal-dialog img {
+	max-width: 153px;
+}
+.modal-dialog p {
+	font-family: "IBMPlexSans-Light";
+}
+
+
+
+
+
 .btn-success {
 	background-color: var(--bg-success);
 }

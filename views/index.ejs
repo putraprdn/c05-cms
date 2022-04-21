@@ -3,8 +3,8 @@
         <h1 class="main-title fs-20 m-0 fw-bold">List Car</h1>
     </div>
     <div class="col-md-6 d-flex justify-content-end">
-        <a class="btn btn-primary text-white fs-14 fw-bold" href="/create"> 
-            <img class="me-2" src="./images/fi_plus.png" alt="plus">
+        <a class="btn btn-primary text-white fs-14 fw-bold" href="/create">
+            <img class="me-2" src="/images/fi_plus.png" alt="plus">
             Add New Car
         </a>
     </div>
@@ -21,36 +21,77 @@
 <div class="cars-container">
     <div class="row">
         <!-- Card -->
-        <div class="col-md-4 mt-4">
-            <div class="card">
-                <img src="./images/image_1.png" class="card-img" alt="Car Image">
-                <div class="card-body p-0">
-                    <h5 class="card-title mt-3 mb-1 fs-14">Nama/Tipe Mobil</h5>
-                    <p class="card-harga mb-1 fs-16">Rp 430.000 / hari</p>
-                    <div class="card-info mt-3">
-                        <div class="info">
-                            <p class="clock d-flex fs-14">
-                                <img class="me-2" src="./images/fi_clock.png" alt="clock icon">
-                                <span class="ml-2">Updated at 4 Apr 2022, 09.00</span>
-                            </p>
+        <% cars.data.forEach(car=> { %>
+            <% var date=new Date(car.updatedAt) %>
+                <div class="col-md-4 mt-4">
+                    <div class="card">
+                        <img src="/images/image_1.png" class="card-img" alt="Car Image">
+                        <div class="card-body p-0">
+                            <h5 class="card-title mt-3 mb-1 fs-14">
+                                <span style="text-transform: capitalize;">
+                                    <%= car.name %>
+                                </span> / <span style="text-transform: capitalize;">
+                                    <%= car.size %>
+                                </span>
+                            </h5>
+                            <p class="card-harga mb-1 fs-16">Rp. <%= car.rent_price/1000 %>.000 / hari</p>
+                            <div class="card-info mt-3">
+                                <div class="info">
+                                    <p class="clock d-flex fs-14">
+                                        <img class="me-2" src="/images/fi_clock.png" alt="clock icon">
+                                        <span class="ml-2">Updated at <%= date.getDate() %>
+                                                <%= date.toLocaleString( undefined, { month:'short', year:'numeric' } )
+                                                    %>, <%= date.toLocaleTimeString(undefined, {hour12: true,
+                                                        hour: '2-digit' , minute:'2-digit'}) %> </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <a href="#" data-id="<%= car.id %> "
+                                    class=" delete_btn font-weight-bold btn btn-outline-danger d-flex align-items-center justify-content-center"
+                                    data-bs-toggle="modal" data-bs-target="#delete-confirm">
+                                    <img class="me-2" src="/images/fi_trash-2.png" alt="">
+                                    Delete</a>
+                            </div>
+                            <div class="col-md-6">
+                                <a class="edit_btn font-weight-bold btn btn-success btn-outline-success d-flex align-items-center justify-content-center text-white"
+                                    href="/update/<%= car.id %> ">
+                                    <img class="me-2" src="/images/fi_edit.png" alt="">
+                                    Edit</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mt-4">
-                    <div class="col-md-6">
-                        <a class=" delete_btn font-weight-bold btn btn-outline-danger d-flex align-items-center justify-content-center"
-                            href="#">
-                            <img class="me-2" src="./images/fi_trash-2.png" alt="">
-                            Delete</a>
+                <% }) %>
+                    <!-- End Card -->
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="delete-confirm" tabindex="-1" aria-labelledby="delete-confirm-label"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content justify-content-center">
+                                <form id="modal-form" method="get" action="/api/car/delete/<%= cars.id %> ">
+                                    <div
+                                        class="modal-body justify-content-center align-items-center d-flex flex-column pb-0">
+                                        <img src="/images/img-BeepBeep.png" alt="">
+                                        <h5 class="mt-4 fs-16 mb-3">Menghapus Data Mobil</h5>
+                                        <p class="fs-14 text-center mb-0">
+                                            Setelah dihapus, data mobil tidak dapat dikembalikan. Yakin ingin menghapus?
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer justify-content-center border-0 pt-0 mt-3">
+                                        <button type="submit" class="btn btn-primary px-4">Ya</button>
+                                        <button type="button" class="btn btn-outline-primary"
+                                            data-bs-dismiss="modal">Tidak</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <a class="edit_btn font-weight-bold btn btn-success btn-outline-success d-flex align-items-center justify-content-center text-white"
-                            href="/update">
-                            <img class="me-2" src="./images/fi_edit.png" alt="">
-                            Edit</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    <!-- End Modal -->
+
+
     </div>
 </div>

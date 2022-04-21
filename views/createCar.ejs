@@ -1,25 +1,25 @@
 <!-- <h1 class="main-title fs-20 mt-3 mb-0 fw-bold">Add New Car</h1> -->
-<form method="post">
+<form method="post" action="/api/car/create">
     <div class="form-card py-3 px-3 mt-3">
         <div class="row">
             <label
                 class="form-label col-md-2 fs-12 col-form-label d-flex align-items-center">Nama<span>&#42;</span></label>
             <div class="col-md-10">
-                <input type="name" class="form-control" id="name" placeholder="Avanza">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Avanza">
             </div>
         </div>
         <div class="row mt-3">
             <label class="form-label col-md-2 fs-12 col-form-label d-flex align-items-center">Sewa
                 Per Hari<span>&#42;</span></label>
             <div class="col-md-10">
-                <input type="number" class="form-control" id="harga" placeholder="Rp 0,-">
+                <input type="number" class="form-control" id="rent_price" name="rent_price" placeholder="Rp 0,-">
             </div>
         </div>
         <div class="row mt-3">
             <label
                 class="form-label col-md-2 fs-12 col-form-label d-flex align-items-center">Ukuran<span>&#42;</span></label>
             <div class="col-md-10">
-                <select class="form-select">
+                <select class="form-select" name="size" id="size">
                     <option value="small">Small</option>
                     <option value="medium">Medium</option>
                     <option value="large">Large</option>
@@ -27,21 +27,21 @@
             </div>
         </div>
         <div class="row mt-3">
-            <label class="form-label col-md-2 fs-12 col-form-label d-flex">Foto<span>&#42;</span></label>
+            <label class="form-label col-md-2 fs-12 col-form-label d-flex">Foto</label>
             <div class="col-md-10">
-                <input class="form-control" type="file" id="formFile" style="height: 32px;">
+                <input class="form-control" type="file" id="image" name="image" style="height: 32px;">
                 <div id="fileHelp" class="form-text">File size max. 2MB</div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="btn-wrap">
-            <a class="btn btn-outline-primary fs-14" href="#">
+            <a class="btn btn-outline-primary fs-14" href="/">
                 Cancel
             </a>
-            <a class="btn btn-primary fs-14 ms-3" href="#">
+            <button class="btn btn-primary fs-14 ms-3" type="submit">
                 Save
-            </a>
+            </button>
         </div>
     </div>
 </form>

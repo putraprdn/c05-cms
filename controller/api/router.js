@@ -9,4 +9,4 @@ router.post("/car/create", apiController.create);
 router.post("/car/update/:id", apiController.update);
 router.get("/car/delete/:id", apiController.destroy);
 
-module.exports = router; // export fungsi router agar module lain bisa membaca file ini
+module.exports = router;

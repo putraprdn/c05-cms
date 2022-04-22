@@ -196,8 +196,6 @@ form > .row {
 	margin-top: 100px;
 }
 
-
-
 .modal-dialog {
 	max-width: 387px;
 }
@@ -208,9 +206,24 @@ form > .row {
 	font-family: "IBMPlexSans-Light";
 }
 
+.alert {
+	font-family: "IBMPlexSans-Medium";
+	font-weight: 500;
+	max-width: 550px;
+	width: 100%;
+	height: 48px;
+	top: 20%;
+	left: 40%;
+	z-index: 999;
+	padding: 10px 15px;
+}
 
-
-
+.alert-success {
+	background-color: #73ca5c;
+}
+.alert-dark {
+	background-color: #151515;
+}
 
 .btn-success {
 	background-color: var(--bg-success);

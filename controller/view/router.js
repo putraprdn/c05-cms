@@ -7,4 +7,4 @@ router.get("/", list);
 router.get("/create", create);
 router.get("/update/:id", update);
 
-module.exports = router; // export fungsi router agar module lain bisa membaca file ini
+module.exports = router;

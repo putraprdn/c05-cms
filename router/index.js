@@ -6,4 +6,4 @@ const api = require("../controller/api/router");
 router.use("/", view);
 router.use("/api", api);
 
-module.exports = router; // export fungsi router agar module lain bisa membaca file ini
+module.exports = router;

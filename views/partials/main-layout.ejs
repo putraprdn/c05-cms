@@ -72,11 +72,17 @@
 
                 const id = $(this).data('id');
                 // alert('/api/car/delete/'+ id);
-                $('#modal-form').attr('action', '/api/car/delete/'+ id);
+                $('#modal-form').attr('action', '/api/car/delete/' + id);
             })
         });
 
+        $(".alert").delay(3000).slideUp(200, function () {
+            $(this).alert('close');
+        });
+
+
     </script>
+
 </body>
 
 </html>

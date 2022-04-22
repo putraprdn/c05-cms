@@ -139,6 +139,7 @@ body {
 .filter .active {
 	background-color: var(--bg-grey);
 	color: var(--bg-primary);
+	border: 1px solid var(--bg-primary) !important;
 }
 
 .cars-container .container {

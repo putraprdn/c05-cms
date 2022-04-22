@@ -8,5 +8,6 @@ router.get("/car/:id", apiController.get);
 router.post("/car/create", apiController.create);
 router.post("/car/update/:id", apiController.update);
 router.get("/car/delete/:id", apiController.destroy);
+router.get("/cars/:size", apiController.filter);
 
 module.exports = router;

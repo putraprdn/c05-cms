@@ -74,7 +74,34 @@
                 // alert('/api/car/delete/'+ id);
                 $('#modal-form').attr('action', '/api/car/delete/' + id);
             })
+
+            $(document).on('click', '#small-btn', function (e) {
+                e.preventDefault();
+                const size = $(this).data('size');
+                $('#filter-form').attr('action', '/filter/' + size);
+                $('#filter-form').submit();
+            })
+            $(document).on('click', '#all-btn', function (e) {
+                e.preventDefault();
+                const size = $(this).data('size');
+                $('#filter-form').attr('action', '/filter/' + size);
+                $('#filter-form').submit();
+            })
+            $(document).on('click', '#medium-btn', function (e) {
+                e.preventDefault();
+                const size = $(this).data('size');
+                $('#filter-form').attr('action', '/filter/' + size);
+                $('#filter-form').submit();
+            })
+            $(document).on('click', '#large-btn', function (e) {
+                e.preventDefault();
+                const size = $(this).data('size');
+                $('#filter-form').attr('action', '/filter/' + size);
+                $('#filter-form').submit();
+            })
+
         });
+
 
         $(".alert").delay(3000).slideUp(200, function () {
             $(this).alert('close');

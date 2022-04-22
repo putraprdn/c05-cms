@@ -93,6 +93,29 @@ const api = {
 			req.flash("delete", "Data Berhasil Dihapus!");
 			return res.status(200).redirect("/");
 		} catch (error) {
+			req.flash("error", "Gagal Menghapus Data!");
+			return res.status(500).redirect("/");
+		}
+	},
+	filter: async (req, res) => {
+		try {
+			if (req.params.size != "all") {
+				var datas = await model.car.findAll({
+					where: {
+						size: req.params.size,
+					},
+				});
+			} else {
+				var datas = await model.car.findAll();
+			}
+
+			return res.status(200).json({
+				success: true,
+				error: 0,
+				message: "data successfully listed",
+				data: datas,
+			});
+		} catch (error) {
 			return res.status(500).json({
 				success: false,
 				error: error.code,

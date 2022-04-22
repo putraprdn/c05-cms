@@ -16,9 +16,9 @@ app.use(expressLayouts);
 
 app.use(
 	session({
-		secret: "geeksforgeeks",
-		saveUninitialized: true,
-		resave: true,
+		secret: "secret",
+		saveUninitialized: false,
+		resave: false,
 	})
 );
 app.use(flash());
